@@ -48,4 +48,4 @@ elif size == 's' or size == "S":
         bill = SMALL_PIZZA
         print("Final Bill Rs: ", bill)
 else:
-    print("Invalid Order")
+    print("Invalid Orders")
