@@ -4,10 +4,7 @@ student_dict = {
     "score":[49,80,76]
 }
 data = pandas.DataFrame(student_dict)
-
+print("Index      Name       Score")
 for (index,row) in data.iterrows():
-    print(row)
-    print(index)
-    print(row.student)
-    print(row.score)
+    print(f"{str(index)}         {str(row.student)}       {str(row.score)}")
 
