@@ -15,6 +15,7 @@ symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 def on_click_exit():
     exit()
 
+
 def on_click_search():
     website = entry_website.get()
     try:
@@ -100,23 +101,23 @@ canvas.create_image(100, 100, image=logo_img)
 canvas.grid(row=0, column=1)
 
 label_website = Label(text="Website", bg="white", font=("courier", 16, "normal"), highlightthickness=0)
-label_website.grid(row=1, column=0,pady=10)
+label_website.grid(row=1, column=0, pady=10)
 
 label_email = Label(text="Email", bg="white", font=("courier", 16, "normal"), highlightthickness=0)
-label_email.grid(row=2, column=0,pady=10)
+label_email.grid(row=2, column=0, pady=10)
 
 label_password = Label(text="Password", bg="white", font=("courier", 16, "normal"), highlightthickness=0)
-label_password.grid(row=3, column=0,pady=10)
+label_password.grid(row=3, column=0, pady=10)
 
 entry_website = Entry(width=30)
-entry_website.grid(row=1, column=1,pady=10)
+entry_website.grid(row=1, column=1, pady=10)
 
 entry_email = Entry(width=30)
 entry_email.insert(0, "devmailbox27@gmail.com")
-entry_email.grid(row=2, column=1,pady=10)
+entry_email.grid(row=2, column=1, pady=10)
 
 entry_password = Entry(width=30)
-entry_password.grid(row=3, column=1,pady=10)
+entry_password.grid(row=3, column=1, pady=10)
 
 button_search = Button(text="Search", width=20, command=on_click_search)
 button_search.grid(row=1, column=2)

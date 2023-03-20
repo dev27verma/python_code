@@ -16,7 +16,6 @@ except FileNotFoundError:
 else:
     to_learn = data.to_dict(orient="records")
 
-
 # if we print the above line print(to_learn) without orient 0/p first all english word then french word dict{english: dev } {english: word}....... {french: dev } {french: dev}
 # if we use orient="record" it will give O/P dict{english: dev, french: dev} in the order
 
