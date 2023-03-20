@@ -14,7 +14,7 @@ print(f"result of Method 1 is: {getSum(num)}")
 # Method 2
 
 def getSum(number):
-    sum = 1
+    sum = 0
     for i in number:
         sum = int(i) + sum
     return sum
