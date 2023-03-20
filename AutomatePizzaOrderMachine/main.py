@@ -5,9 +5,9 @@ SMALL_PIZZA = 300
 MEDIUM_PIZZA = 500
 SMALL_PIZZA_PEPPERONI = 140
 
-size = input("Enter Pizza Size Large, Medium and Small ")
-add_pepperoni = input("Add Pepperoni or not ")
-add_EXTRA_CHEESE = input("Add Extra Cheese or not ")
+size = input("Enter Pizza Size Large, Medium and Small? Input 'L', 'M' or 'S'? ")
+add_pepperoni = input("Add Pepperoni or not? Input 'Y' or 'N'? ")
+add_EXTRA_CHEESE = input("Add Extra Cheese or not? Input 'Y' or 'N'? ")
 if size == 'l' or size == "L":
     if add_pepperoni == 'y' and add_EXTRA_CHEESE == 'y':
         bill = LARGE_PIZZA + MEDIUM_AND_LARGE_PIZZA_PEPPERONI + EXTRA_CHEESE
