@@ -21,5 +21,6 @@ def days_in_month(y, m):
 # 🚨 Do NOT change any of the code below
 year = int(input("Enter a year: "))
 month = int(input("Enter a month: "))
+
 days = days_in_month(year, month)
-print(days)
+print(f"Number of days in month {month} of year {year} is {days}")
