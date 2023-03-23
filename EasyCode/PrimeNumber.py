@@ -1,10 +1,11 @@
-number = int(input("Enter a number "))
+num = int(input("Enter a number "))
 
-def prime_number(number):
+
+def is_prime_number(number):
     count = 0
     if number >= 2:
-        for num in range(1, number + 1):
-            if number % num == 0:
+        for n in range(1, number + 1):
+            if number % n == 0:
                 count += 1
         if count == 2:
             print(f"Number {number} is prime")
@@ -14,4 +15,6 @@ def prime_number(number):
     else:
         print("invalid number")
 
-prime_number(number)
+
+is_prime_number(num)
+
