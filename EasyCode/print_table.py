@@ -1,4 +1,4 @@
-num = int(input("Enter the number for which table is needed"))
-
-for i in range(1,11):
-    print(f"{i} X {num} = {i * num}")
+num = int(input("Enter the number for which table is needed? "))
+till_num = int(input("Till which number you want the table? "))
+for i in range(1, till_num + 1):
+    print(f"{num} X {i}  = {i * num}")
