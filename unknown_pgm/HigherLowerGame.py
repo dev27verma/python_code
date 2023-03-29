@@ -1,6 +1,6 @@
 from game_data import data
 import random
-from art import logo, vs
+from HigherLower.art import logo, vs
 
 
 def get_random_account():
