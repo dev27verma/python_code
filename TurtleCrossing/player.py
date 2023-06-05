@@ -1,8 +1,9 @@
 from turtle import Turtle
 
-STARTING_POSITION = (0,-280)
+STARTING_POSITION = (0, -280)
 TURTLE_MOVE = 10
 FINISH_LINE = 280
+
 
 class Player(Turtle):
     def __init__(self):

@@ -5,7 +5,7 @@ from car_manager import CarManager
 from scoreboard import ScoreBoard
 
 screen = Screen()
-screen.setup(600,600)
+screen.setup(600, 600)
 screen.tracer(0)
 
 player = Player()
@@ -22,42 +22,16 @@ while game_is_on:
     car_manager.create_car()
     car_manager.move_car()
 
-    #detect collison with car
+    # detect collision with car
     for car in car_manager.all_cars:
         if car.distance(player) < 20:
             game_is_on = False
             scoreboard.game_over()
 
-    #Detect successful collision
+    # Detect successful collision
     if player.is_at_finish_line():
         player.go_to_start()
         car_manager.car_s()
         scoreboard.calculate_score()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 screen.exitonclick()
