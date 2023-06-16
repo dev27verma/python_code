@@ -1,5 +1,3 @@
-# Python3 program to display Prime numbers till N
-
 # function to check if a given number is prime
 def isPrime(n):
     # since 0 and 1 is not prime return false.

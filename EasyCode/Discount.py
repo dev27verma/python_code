@@ -1,8 +1,3 @@
-import sys
-import math
-from contextlib import redirect_stdout
-
-
 def calculate_total_price(prices, discount):
     total_price = round(int(prices - (prices * discount / 100)))
     return total_price
