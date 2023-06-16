@@ -1,0 +1,12 @@
+upper = 100
+lower = 1
+count = 0
+my_list = []
+for num in range(lower, upper + 1):
+    if lower > 1:
+        for i in range(2,num):
+            if num % i == 0:
+                break
+            else:
+                my_list.append(lower)
+print(my_list)
