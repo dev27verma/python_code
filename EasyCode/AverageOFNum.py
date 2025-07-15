@@ -1,8 +1,8 @@
-num = int(input("Enter numbers to be entered: "))
-number = []
-for n in range(num):
-    elements = int(input("Enter Elements: "))
-    number.append(elements)
+def average_number(num):
+    for n in range(len(num)):
+        num[n] = int(num[n])
+    return num
 
-average = sum(number)/num
-print("average is: ", average)
+
+num = input("Enter the numbers: ").split(',')
+print(f"average of Numbers: {round(sum(average_number(num)) // len(average_number(num)))}")
