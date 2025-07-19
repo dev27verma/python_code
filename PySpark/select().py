@@ -14,8 +14,7 @@ columns = ["first_name", "last_name", "country", "state"]
 df = spark.createDataFrame(data=data, schema=columns)
 df.show(truncate=False)
 
-df.select("first_name").show()
-
+# using Dataframe column name
 df.select("first_name", "last_name").show()
 
 # Using Dataframe object name
@@ -48,4 +47,5 @@ df2.show(truncate=False)  # shows all columns
 
 df2.select("name").show(truncate=False)
 df2.select("name.first_name", "name.last_name").show(truncate=False)
+df2.select(df2.state,df2.gender, df2.name.first_name).show()
 df2.select("name.*").show(truncate=False)
