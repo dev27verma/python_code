@@ -23,6 +23,15 @@ df.select(df.first_name, df.last_name).show()
 # Using col function
 df.select(col("first_name"), col("last_name")).show()
 
+# select all columns from list
+df.select(*columns).show()
+df.select([col for col in df.columns]).show()
+df.select("*").show()
+
+#select column by index
+df.select(df.columns[:2]).show()
+df.select(df.columns[1:3]).show()
+
 data = [(("James", None, "Smith"), "OH", "M"),
         (("Anna", "Rose", ""), "NY", "F"),
         (("Julia", "", "Williams"), "OH", "F"),
