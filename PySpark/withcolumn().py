@@ -16,23 +16,21 @@ df = spark.createDataFrame(data=data, schema=columns)
 df.printSchema()
 df.show(truncate=False)
 
-df2 = df.withColumn("salary", col("salary").cast("Integer"))
-df2.printSchema()
-df2.show(truncate=False)
+df = df.withColumn("salary", col("salary").cast("Integer"))
+df.printSchema()
+df.show(truncate=False)
 
-df3 = df.withColumn("salary", col("salary") * 100)
-df3.printSchema()
-df3.show(truncate=False)
+df = df.withColumn("salary", col("salary") * 100)
+df.show(truncate=False)
 
-df4 = df.withColumn("CopiedColumn", col("salary") * -1)
-df4.printSchema()
+df = df.withColumn("CopiedColumn", col("salary") * -1)
 
-df5 = df.withColumn("Country", lit("USA"))
-df5.printSchema()
+df = df.withColumn("Country", lit("USA"))
+df.printSchema()
 
-df6 = df.withColumn("Country", lit("USA")).withColumn("anotherColumn", lit("anotherValue"))
-df6.printSchema()
+df = df.withColumn("Country", lit("USA")).withColumn("anotherColumn", lit("anotherValue"))
+df.printSchema()
 
 df.withColumnRenamed("gender", "sex").show(truncate=False)
 
-df4.drop("CopiedColumn").show(truncate=False)
+df.drop("CopiedColumn").show(truncate=False)
