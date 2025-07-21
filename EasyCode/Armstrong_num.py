@@ -2,8 +2,8 @@
 def arm_strong(num):
     sum = 0
     while num > 0:
-        digit = num % 10
-        sum += digit ** 3
+        temp = num % 10
+        sum += temp ** 3
         num //= 10
     return sum
 

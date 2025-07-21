@@ -2,22 +2,17 @@ from art import logo
 
 print(logo)
 
-
 def add(num1, num2):
     return num1 + num2
-
 
 def substract(num1, num2):
     return num1 - num2
 
-
 def multiply(num1, num2):
     return num1 * num2
 
-
 def divide(num1, num2):
     return num1 / num2
-
 
 operation = {
     "+": add,
@@ -26,7 +21,6 @@ operation = {
     "/": divide
 }
 
-
 def calculation():
     num1 = float(input("Enter first number: "))
     for symbol in operation:
@@ -34,6 +28,9 @@ def calculation():
     continue_calculation = True
     while continue_calculation:
         selected_operation = input("Pick an operation to perform: ")
+        if selected_operation not in ('+','-','*','/'):
+            print("Invalid Operand")
+            exit()
         num2 = float(input("Enter next number: "))
         calculation_function = operation[selected_operation]
         result = calculation_function(num1, num2)

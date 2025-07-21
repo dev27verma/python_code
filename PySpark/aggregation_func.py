@@ -1,10 +1,7 @@
 import pyspark
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import approx_count_distinct, collect_list
-from pyspark.sql.functions import collect_set, sum, avg, max, countDistinct, count
-from pyspark.sql.functions import first, last, kurtosis, min, mean, skewness
-from pyspark.sql.functions import stddev, stddev_samp, stddev_pop, sumDistinct
-from pyspark.sql.functions import variance, var_samp, var_pop
+from pyspark.sql.functions import (approx_count_distinct, collect_list, first, last, kurtosis, min, mean, skewness, collect_set, sum, sum_distinct,
+                                   avg, max, countDistinct, count, stddev, stddev_samp, stddev_pop, variance, var_samp, var_pop)
 
 spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
 
@@ -32,5 +29,5 @@ df.select(mean("salary")).show(truncate=False)
 df.select(skewness("salary")).show(truncate=False)
 df.select(stddev("salary"), stddev_samp("salary"),stddev_pop("salary")).show(truncate=False)
 df.select(sum("salary")).show(truncate=False)
-df.select(sumDistinct("salary")).show(truncate=False)
+df.select(sum_distinct("salary")).show(truncate=False)
 df.select(variance("salary"), var_samp("salary"), var_pop("salary")).show(truncate=False)
