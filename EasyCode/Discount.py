@@ -1,25 +1,27 @@
 def calculate_total_price(prices, discount):
-    total_price = round(int(prices - (prices * discount / 100)))
+    total_price = round((prices - (prices * discount / 100)),2)
     return total_price
 
 
-def main():
-    discount = int(input("Discount on product: "))
-    n = int(input("No of product: "))
-    if 0 > n > 100:
+def product_discount():
+    discount = float(input("Discount on product: "))
+    if discount < 0 or discount > 100:
+        print("Invalid Discount Value Entered")
         exit()
-    if 0 >= discount >= 100:
+    quantity = int(input("No of product: "))
+    if quantity < 0:
+        print("Invalid Quantity Value Entered")
         exit()
     price = []
     prices = 0
-    for i in range(n):
-        price.append(int(input("Price of product: ")))
-        if 0 > price[i] > 100000:
+    for i in range(quantity):
+        price.append(float(input("Price of product: ")))
+        if 0 > price[i]:
+            print("Invalid Price Inserted")
             exit()
         prices += price[i]
     total_price = calculate_total_price(prices, discount)
-    print(f"Result is: {total_price}")
+    print(f"Total Price to pay: {total_price}")
 
 
-if __name__ == '__main__':
-    main()
+product_discount()
