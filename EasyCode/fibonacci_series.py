@@ -1,6 +1,6 @@
 def fibonacci_series(n):
     if n < 0:
-        print("Please enter a valid integer")
+        print("Please enter a positive integer")
         exit()
     if n == 0:
         return []
@@ -15,10 +15,10 @@ def fibonacci_series(n):
 
 # Main program
 num = int(input("Enter the number of terms for the Fibonacci series: "))
-result = fibonacci_series(n)
+result = fibonacci_series(num)
 
 print("\nFibonacci series:")
-print(", ".join(map(str, result)))
+print(result)
 
 total = sum(result)
 print(f"\nSum of the series: {total}")
