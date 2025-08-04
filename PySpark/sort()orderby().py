@@ -10,8 +10,8 @@ simpleData = [("James","Sales","NY",90000,34,10000), ("Michael","Sales","NY",860
 columns= ["employee_name", "department", "state", "salary", "age", "bonus"]
 
 df = spark.createDataFrame(simpleData, columns)
-# df.printSchema()
-# df.show(truncate=False)
+df.printSchema()
+df.show(truncate=False)
 
 df.sort("department","state").show(truncate=False)
 df.sort(col("department"),col("state").asc()).show(truncate=False)

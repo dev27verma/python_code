@@ -1,9 +1,9 @@
-# Create Empty Data Frame
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, StringType
 
 spark = SparkSession.builder.appName("Empty Dataframe").getOrCreate()
 
+# Create Empty Data Frame
 df = spark.createDataFrame([], StructType([]))
 df.printSchema()
 df.show()

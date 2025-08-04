@@ -1,5 +1,5 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.types import StructType, StructField, StringType
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType
 
 spark = SparkSession.builder.appName("Convert RDD To DF").getOrCreate()
 
@@ -13,7 +13,6 @@ df1.printSchema()
 df1.show(truncate=False)
 
 # with Schema
-
 dept_column = ['dept_name', 'dept_id']
 df1 = rdd.toDF(dept_column)
 df1.printSchema()
@@ -25,7 +24,7 @@ dept_df.show()
 
 deptSchema = StructType([
     StructField('dept_name', StringType(), True),
-    StructField('dept_id', StringType(), True)
+    StructField('dept_id', IntegerType(), True)
 ])
 
 deptDF1 = spark.createDataFrame(rdd, schema=deptSchema)
