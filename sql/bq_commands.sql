@@ -1,7 +1,7 @@
 -- Export (Copy) Data from BigQuery to GCS
 bq extract --destination_format=CSV --compression=GZIP project_id.dataset_id.table_id gs://your-bucket-name/your-file-name.csv.gz;
 --Import (Copy) Data from GCS to BigQuery
-bq load --source_format=CSV --autodetect project_id:dataset_id.table_id gs://your-bucket-name/your-file-name.csv.gz
+bq load --source_format=CSV --autodetect project_id.dataset_id.table_id gs://your-bucket-name/your-file-name.csv.gz;
 
 -- Datasets in a project:
 bq ls your_dataset;

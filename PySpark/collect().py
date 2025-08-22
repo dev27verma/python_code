@@ -1,5 +1,4 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import expr
 
 spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
 

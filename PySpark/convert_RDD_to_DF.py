@@ -27,6 +27,6 @@ deptSchema = StructType([
     StructField('dept_id', IntegerType(), True)
 ])
 
-deptDF1 = spark.createDataFrame(rdd, schema=deptSchema)
+deptDF1 = spark.createDataFrame(rdd, deptSchema)
 deptDF1.printSchema()
 deptDF1.show(truncate=False)
