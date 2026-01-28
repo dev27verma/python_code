@@ -3,7 +3,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import (approx_count_distinct, collect_list, first, last, kurtosis, min, mean, skewness, collect_set, sum, sum_distinct,
                                    avg, max, countDistinct, count, stddev, stddev_samp, stddev_pop, variance, var_samp, var_pop)
 
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName('Aggregation Function').getOrCreate()
 
 data = [("James", "Sales", 3000), ("Michael", "Sales", 4600), ("Robert", "Sales", 4100), ("Maria", "Finance", 3000), ("James", "Sales", 3000),
               ("Scott", "Finance", 3300), ("Jen", "Finance", 3900), ("Jeff", "Marketing", 3000), ("Kumar", "Marketing", 2000), ("Saif", "Sales", 4100)]
