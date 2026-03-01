@@ -8,10 +8,10 @@ FROM your_table_name;
 SELECT LEFT(employee_name, 5) AS first_five_characters
 FROM your_table_name;
 ----------------------------------------------------
---    c1 c2                output
---    1   a                c1   c2
---    1   b                1    a,b
---    2   c                2    c
+c1 c2                output
+1   a                c1   c2
+1   b                1    a,b
+2   c                2    c
 
 SELECT c1, STRING_AGG(c2, ',') AS c2 FROM your_table GROUP BY c1;
 ------------------------------------------------------------
