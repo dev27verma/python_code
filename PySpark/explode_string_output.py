@@ -1,17 +1,13 @@
-'''    column_A          column_B
-        1         120*234*452*106*865*120
-        2         230*340*230*675*230
-
-    output
-       column_A   column_B   column_C
-        1           120         2
-        1           234         1
-        1           452         1
-        1           106         1
-        1           865         1
-        2           230         3
-        2           340         1
-        2           675         1
+'''    column_A          column_B                   output
+        1         120*234*452*106*865*120           column_A   column_B   column_C
+        2         230*340*230*675*230                   1           120         2
+                                                        1           234         1
+                                                        1           452         1
+                                                        1           106         1
+                                                        1           865         1
+                                                        2           230         3
+                                                        2           340         1
+                                                        2           675         1
 write pyspark code to get the above output from given columns, columnC is the occurrence of number in above column
 '''
 
