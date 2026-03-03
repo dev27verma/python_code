@@ -8,7 +8,6 @@ output:
 102 | 10201
 102 | 10202
 '''
-
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, IntegerType, ArrayType
 from pyspark.sql.functions import explode
