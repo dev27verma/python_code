@@ -28,10 +28,10 @@ columns = ["column_A", "column_B"]
 df = spark.createDataFrame(data, columns)
 
 # Step 1: Split column_B by *
-df_split = df.withColumn("num_array", split(col("column_B"), "\\*"))
+df_split = df.withColumn("column_C", split(col("column_B"), "\\*"))
 
 # Step 2: Explode array into rows
-df_exploded = df_split.withColumn("column_B", explode(col("num_array")))
+df_exploded = df_split.withColumn("column_B", explode(col("column_C")))
 
 # Step 3: Group and count occurrences
 result_df = df_exploded.groupBy("column_A", "column_B").agg(count("*").alias("column_C")).orderBy("column_A", "column_B")

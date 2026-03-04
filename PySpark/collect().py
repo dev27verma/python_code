@@ -1,6 +1,6 @@
 from pyspark.sql import SparkSession
 
-spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+spark = SparkSession.builder.appName('collect').getOrCreate()
 
 dept = [("Finance",10), ("Marketing",20), ("Sales",30), ("IT",40)]
 deptColumns = ["dept_name","dept_id"]
@@ -8,6 +8,7 @@ deptDF = spark.createDataFrame(dept, deptColumns)
 deptDF.show(truncate=False)
 
 # collect all data
+
 dataCollect = deptDF.collect()
 print(dataCollect)
 
