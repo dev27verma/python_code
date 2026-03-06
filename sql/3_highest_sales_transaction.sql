@@ -13,14 +13,11 @@ sales_transaction
 --Use Window Functions: Use the ROW_NUMBER() function over a partitioned set to rank transactions per customer.
 
 SELECT
-  customer_id, transaction_id, sales_amount
-FROM (
-  SELECT *,
-         RANK() OVER (PARTITION BY customer_id ORDER BY sales_amount DESC) AS rnk
-  FROM sales_transaction
-  WHERE transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 MONTH)
-)
-WHERE rnk <= 3;
+    *,
+    RANK() OVER (PARTITION BY customer_id ORDER BY sales_amount DESC) AS rnk
+FROM sales_transaction
+    WHERE DATE_DIFF(CURRENT_DATE(), transaction_date, MONTH) = 1
+    QUALIFY rnk <= 3;
 
 output
 | customer_id | transaction_id | sales_amount |

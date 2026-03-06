@@ -8,21 +8,8 @@
     hist  987    3450                       hist  987    3450   6700
 
 SELECT
-    e.dept, e.emp_id, e.salary, d.high
-FROM employee e
-JOIN (
-    SELECT
-        dept,
-        MAX(salary) AS high
-    FROM employee
-    GROUP BY dept
-) d
-ON t.dept = d.dept;
----------------------------------
-SELECT *
-FROM (
-    SELECT *,
-           RANK() OVER (PARTITION BY dept ORDER BY salary DESC) AS rnk
-    FROM employee
-)
-WHERE rnk = 1;
+    dept,
+    emp_id,
+    salary,
+    MAX(salary) OVER (PARTITION BY dept) AS high
+FROM employee;

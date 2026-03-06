@@ -21,9 +21,6 @@ FROM (
 WHERE month_diff = 1;
 
 
-
-
-
 output
 | customer_id | order_date | prev_order_date |
 | ----------- | ---------- | --------------- |

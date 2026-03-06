@@ -19,15 +19,17 @@ JOIN employees m
     ON e.manager_name = m.emp_name
 WHERE e.emp_salary > m.emp_salary;
 ------------------------------------------------------
--- method 2
+-- employees earning more than their manager using salary_history table
+WITH latest_salary AS (
+    SELECT emp_id,
+           salary,
+           ROW_NUMBER() OVER (PARTITION BY emp_id ORDER BY effective_date DESC) rn
+    FROM salary_history
+)
 SELECT e.emp_name
 FROM employees e
-JOIN salary_history s1
-  ON e.emp_id = s1.emp_id
-JOIN (
-    SELECT emp_id, MAX(salary) AS max_salary
-    FROM salary_history
-    GROUP BY emp_id
-) s2
-  ON e.manager_id = s2.emp_id
-WHERE s1.salary > s2.max_salary;
+JOIN latest_salary emp
+    ON e.emp_id = emp.emp_id AND emp.rn = 1
+JOIN latest_salary mgr
+    ON e.manager_id = mgr.emp_id AND mgr.rn = 1
+WHERE emp.salary > mgr.salary;

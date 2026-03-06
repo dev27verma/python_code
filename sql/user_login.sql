@@ -23,10 +23,7 @@ FROM (
     SELECT
         user_id,
         login_date,
-        ROW_NUMBER() OVER (
-            PARTITION BY user_id
-            ORDER BY login_date DESC
-        ) AS rn
+        ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY login_date DESC) AS rn
     FROM employee
 ) t
 WHERE rn IN (1,3,5,7);

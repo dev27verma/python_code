@@ -27,7 +27,6 @@ FROM A
 INNER JOIN B
 ON A.a = B.b;
 | a | b |
-| - | - |
 | 1 | 1 |
 | 1 | 1 |
 | 1 | 1 |

@@ -18,7 +18,6 @@ SELECT
     MAX(purchase_time) AS last_purchase_time
 FROM purchases
 GROUP BY product, customer, purchase_date;
-
 -- 2. Time difference between first and last purchase on the same day.
 SELECT
     product,
@@ -29,7 +28,6 @@ SELECT
     MAX(purchase_time) - MIN(purchase_time) AS time_diff
 FROM purchases
 GROUP BY product, customer, purchase_date;
-
 -- 3. Find the second purchase made by each customer for each product on a given date.
 SELECT *
 FROM (
