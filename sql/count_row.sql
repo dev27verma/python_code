@@ -27,4 +27,4 @@ SELECT id,
            THEN COUNT(*) OVER (PARTITION BY id) - 1
            ELSE NULL
        END AS temp
-FROM t;
+FROM table_id;

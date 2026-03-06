@@ -7,7 +7,7 @@ WHERE id IN (
                ROW_NUMBER() OVER (
                    ORDER BY id
                ) AS rn
-        FROM table_name
+        FROM table_name)
     t
     WHERE rn > 1
 );
