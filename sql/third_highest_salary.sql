@@ -1,6 +1,6 @@
 -- third highest salary
 
-select * from salary where amount = (select distinct(amount) from salary order by amount desc limit 1 offset 2) limit 1
+select * from employees where salary = (select distinct(salary) from employees order by salary desc limit 1 offset 2)
 
 ---------------------------------------------
 -- if two three employee having same salary and we want distinct salary amount

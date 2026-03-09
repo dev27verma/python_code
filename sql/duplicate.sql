@@ -4,11 +4,8 @@ WHERE id IN (
     SELECT id
     FROM (
         SELECT id,
-               ROW_NUMBER() OVER (
-                   ORDER BY id
-               ) AS rn
-        FROM table_name)
-    t
+               ROW_NUMBER() OVER (ORDER BY id) AS rn
+        FROM table_name) t
     WHERE rn > 1
 );
 

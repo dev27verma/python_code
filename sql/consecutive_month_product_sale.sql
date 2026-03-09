@@ -13,9 +13,7 @@
 SELECT DISTINCT customer_id
 FROM (
     SELECT customer_id,
-           DATE_DIFF(order_date,
-                     LAG(order_date) OVER (PARTITION BY customer_id ORDER BY order_date),
-                     MONTH) AS month_diff
+           DATE_DIFF(order_date, LAG(order_date) OVER (PARTITION BY customer_id ORDER BY order_date), MONTH) AS month_diff
     FROM orders
 ) t
 WHERE month_diff = 1;

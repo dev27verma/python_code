@@ -10,7 +10,7 @@
 
 -- write sql to calculate the difference in order amount from the previous order for each customer order
 WITH prev_orders AS (
-    SELECT customer_id, order_id, order_date, order_amount,
+    SELECT *,
         LAG(order_amount) OVER (PARTITION BY customer_id ORDER BY order_date) AS prev_order_amount
     FROM orders
 )

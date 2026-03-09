@@ -19,7 +19,6 @@ full_range AS (
       (SELECT MAX(num) FROM numbers)
   )) AS num
 )
-
 -- We remove numbers that already exist in the original table.
 SELECT num AS missing_number
 FROM full_range

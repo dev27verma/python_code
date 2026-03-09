@@ -24,3 +24,11 @@ bq update --description "This is my table" your_dataset.your_table
 bq update --schema new_schema.json your_dataset.your_table
 
 
+BigQuery Predefined Role
+    BigQuery Admin (roles/bigquery.admin)	Full control over all BigQuery resources
+    BigQuery Data Owner (roles/bigquery.dataOwner)	Full control of datasets and tables
+    BigQuery Data Editor (roles/bigquery.dataEditor)	Can update, insert, and delete data
+    BigQuery Data Viewer (roles/bigquery.dataViewer)	Read-only access to data
+    BigQuery Job User (roles/bigquery.jobUser)	Can run queries and jobs
+    BigQuery User (roles/bigquery.user)	Can create datasets and run jobs
+    BigQuery Metadata Viewer (roles/bigquery.metadataViewer)

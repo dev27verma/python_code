@@ -13,14 +13,14 @@
 
 WITH yearly_sales AS (
   SELECT
-    p.prod_nm, EXTRACT(YEAR FROM PARSE_DATE('%d-%m-%Y', s.order_dt)) AS year, SUM(s.sales_amt) AS total_sales
+    p.prod_nm, EXTRACT(YEAR FROM s.order_dt) AS year, SUM(s.sales_amt) AS total_sales
   FROM sales_table s JOIN product_table p
     ON s.prod_id = p.prod_id
   GROUP BY prod_nm, year
 ),
 ranked_sales AS (
   SELECT
-    prod_nm, year, total_sales, RANK() OVER (PARTITION BY year ORDER BY total_sales DESC) AS rnk
+    *, RANK() OVER (PARTITION BY year ORDER BY total_sales DESC) AS rnk
   FROM yearly_sales
 )
 SELECT

@@ -10,7 +10,6 @@
                                                         2           675         1
 write pyspark code to get the above output from given columns, columnC is the occurrence of number in above column
 '''
-
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import split, explode, col, count
 
@@ -23,9 +22,9 @@ data = [
     (2, "230*340*230*675*230")
 ]
 
-columns = ["column_A", "column_B"]
+schema = ["column_A", "column_B"]
 
-df = spark.createDataFrame(data, columns)
+df = spark.createDataFrame(data, schema)
 
 # Step 1: Split column_B by *
 df_split = df.withColumn("column_C", split(col("column_B"), "\\*"))
