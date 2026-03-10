@@ -19,12 +19,13 @@ WITH salary_comparison AS (                                                     
         LAG(salary) OVER (PARTITION BY emp_id ORDER BY year) AS prev_salary        -- LAG(salary) → returns salary from previous row
     FROM employee_salary                                                           -- PARTITION BY emp_id → calculates separately for each employee
 ),
-raise_flag AS (                                                                    -- Identifies whether salary increased compared to previous year.SELECT *,
-     CASE
-        WHEN salary > prev_salary THEN 1
-        ELSE 0
-     END AS is_raise
-FROM salary_comparison
+raise_flag AS (                                                                    -- Identifies whether salary increased compared to previous year.
+    SELECT *,
+        CASE
+            WHEN salary > prev_salary THEN 1
+            ELSE 0
+        END AS is_raise
+    FROM salary_comparison
 ),
 consecutive_check AS (                                                              -- Checks whether the previous year also had a raise.
     SELECT *,

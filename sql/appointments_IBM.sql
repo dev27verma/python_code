@@ -11,9 +11,8 @@ appointments
 
 -- Write a SQL query to list all appointments scheduled on weekends (Saturday or Sunday).
 
-SELECT
-  email,
-  FORMAT_DATE('%A', DATE(appointment_date)) AS scheduled_appointment
+SELECT email,
+       FORMAT_DATE('%A', appointment_date) AS scheduled_appointment
 FROM appointments
-WHERE EXTRACT(DAYOFWEEK FROM DATE(appointment_date)) IN (1, 7)
-ORDER BY email ASC;
+WHERE EXTRACT(DAYOFWEEK FROM appointment_date) IN (1,7)
+ORDER BY email;
