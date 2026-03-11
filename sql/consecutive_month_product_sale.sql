@@ -1,4 +1,3 @@
---- find the person who bought product in consecutive month
   orders_table
 | customer_id | order_date | price |                        prev_order_date | month_diff |
 | ----------- | ---------- | ----- |                         --------------- | ---------- |
@@ -9,6 +8,7 @@
 | 103         | 2026-02-01 | 200   |                         NULL            | NULL       |
 | 103         | 2026-03-01 | 100   |                         2026-02-01      | 1          |
 
+--- find the person who bought product in consecutive month
 
 SELECT DISTINCT customer_id
 FROM (
