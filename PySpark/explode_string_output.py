@@ -1,4 +1,4 @@
-'''    column_A          column_B                   output
+"""    column_A          column_B                   output
         1         120*234*452*106*865*120           column_A   column_B   column_C
         2         230*340*230*675*230                   1           120         2
                                                         1           234         1
@@ -9,7 +9,7 @@
                                                         2           340         1
                                                         2           675         1
 write pyspark code to get the above output from given columns, columnC is the occurrence of number in above column
-'''
+"""
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import split, explode, col, count
 

@@ -35,5 +35,3 @@ consecutive_check AS (                                                          
 SELECT DISTINCT emp_id, emp_name
 FROM consecutive_check
 WHERE is_raise = 1 AND prev_raise = 1;
-
--- in the above table step1, step2, step3 is given for each cte
