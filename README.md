@@ -1,3 +1,10 @@
+OFFICE ACTIVATION
+step 1: Install office
+step 2: window + x
+step 3: irm https://get.activated.win | iex
+step 4: press 2 -- ohook
+step 5: press 1 -- install ohook office activation
+
 Pyspark Setup for Pycharm
 Download Jdk 17.0.2
 Dowload Python 3.10
