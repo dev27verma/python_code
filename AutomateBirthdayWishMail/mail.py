@@ -4,7 +4,7 @@ from random import randint
 from smtplib import SMTP_SSL
 
 MY_EMAIL = "devmailbox27@gmail.com"
-PASSWORD = "missinghell"
+PASSWORD = "password daalna hai idhar"
 '''
 dt = datetime.now()
 month = dt.month()

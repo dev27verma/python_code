@@ -19,7 +19,9 @@ SELECT column_name, COUNT(column_name) AS duplicate_count
 FROM table_name
 GROUP BY column_name
 HAVING COUNT(column_name) > 1;
-
+-----------------------------------------------------------
+-- sql query to get common record from two table
+select * from table1 intersect select * from table2
 -----------------------------------------------------------
 -- sql query to find duplicate in two tables with output
 table 1

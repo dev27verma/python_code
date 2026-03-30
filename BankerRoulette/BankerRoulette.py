@@ -1,6 +1,6 @@
 import random
 
-name = input("Give Everybody's name ").split(',')
+name = input("Give Everybody's name with space ").split(' ')
 
 # first way
 choose = random.choice(name)
