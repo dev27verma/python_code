@@ -7,16 +7,13 @@ FROM your_table_name;
 
 SELECT LEFT(employee_name, 5) AS first_five_characters
 FROM your_table_name;
-----------------------------------------------------
-c1 c2                output
-1   a                c1   c2
-1   b                1    a,b
-2   c                2    c
-
-SELECT c1, STRING_AGG(c2, ',') AS c2 FROM your_table GROUP BY c1;
 ------------------------------------------------------------
 -- sql query to fetch 'ACL' from ORACLE
 SELECT SUBSTRING('verdevkd', CHARINDEX('dev', 'verdevkd'), 3) AS result;
+----------------------------------------
+how many times 'l' coming in world "Hello World"
+
+SELECT LENGTH('Hello World') - LENGTH(REPLACE('Hello World', 'l', '')) AS l_count;
 
 -----------------------------------------------------------------------------------
 -- Remove null from table
